@@ -10,7 +10,7 @@
             <div class="card-body">
                 <h5 class="card-title">OSRS Profit Buddy</h5>
                 <p class="card-text">A Video Game Calc & Tool project utilizing DataTables to display up to date market data.</p>
-                <a href="#" class="btn btn-primary">View Details</a>
+                <a href="{{ route('profit-buddy') }}" class="btn btn-primary">View Details</a>
             </div>
         </div>
     </div>
@@ -21,7 +21,7 @@
             <div class="card-body">
                 <h5 class="card-title">Bingo Buddy</h5>
                 <p class="card-text">A bingo-type game, where groups can setup bingo boards to compete against each other.</p>
-                <a href="#" class="btn btn-primary">View Details</a>
+                <a href="{{ route('bingo-buddy') }}" class="btn btn-primary">View Details</a>
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@
             <div class="card-body">
                 <h5 class="card-title">ToolkitExt</h5>
                 <p class="card-text">A game mod and Twitch Extension that gives viewers control of the in game events.</p>
-                <a href="#" class="btn btn-primary">View Details</a>
+                <a href="{{ route('toolkit-ext') }}" class="btn btn-primary">View Details</a>
             </div>
         </div>
     </div>
@@ -43,7 +43,7 @@
             <div class="card-body">
                 <h5 class="card-title">TwitchToolkit</h5>
                 <p class="card-text">My first C# project, a game mod that integrates with twitch text chat to influence the game.</p>
-                <a href="#" class="btn btn-primary">View Details</a>
+                <a href="{{ route('twitch-toolkit') }}" class="btn btn-primary">View Details</a>
             </div>
         </div>
     </div>
