@@ -14,7 +14,7 @@
                         <a class="nav-link{{ Route::is('projects') ? ' active' : '' }}" href="{{ route('projects') }}">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('contact') }}">Contact Me</a>
+                        <a class="nav-link" href="{{ route('home') }}/#contact-section">Contact Me</a>
                     </li>
                 </ul>
             </div>
