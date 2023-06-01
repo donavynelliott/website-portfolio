@@ -24,15 +24,8 @@
             max-width: 42em;
             margin-top: 3rem;
         }
-
-        .btn-secondary,
-        .btn-secondary:hover,
-        .btn-secondary:focus {
-            color: #333;
-            text-shadow: none;
-            /* Prevent inheritance from `body` */
-        }
     </style>
+    @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>
 
 <body class="text-center text-white bg-dark">
@@ -48,7 +41,7 @@
                     I bring a passion for creative technologies and a dedication to delivering high-quality code.
                 </p>
                 <p class="lead">
-                    <a href="{{ route('projects') }}" class="btn btn-lg btn-secondary fw-bold border-white bg-white">My Latest Projects</a>
+                    <a href="{{ route('projects') }}" class="btn btn-lg btn-secondary fw-bold">My Latest Projects</a>
                 </p>
             </div>
 

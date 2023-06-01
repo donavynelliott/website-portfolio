@@ -1,0 +1,23 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+$gray: #6c757d;
+$gray-dark: #343a40;
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "light": $light,
+    "dark": $dark,
+    "gray": $gray,
+    "gray-dark": $gray-dark,
+);
+
+$bg-colors: (
+    'gray': $gray,
+    'gray-dark': $gray-dark,
+)
