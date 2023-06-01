@@ -94,6 +94,15 @@
                 </div>
             </div>
         </div>
+
+        <div class="position-fixed bottom-0 start-50 translate-middle-x p-3" style="z-index: 11">
+            <div id="message-toast" class="toast hide bg-success" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-body">
+
+                </div>
+            </div>
+        </div>
+
         @include('layouts.footer')
     </main>
     <script>
@@ -120,10 +129,34 @@
                     },
                     type: 'POST',
                     success: function(data) {
-                        alert('Message sent successfully!');
+                        if (data.status !== undefined && data.status === 'success' && data.message !== undefined) {
+                            toast(data.message, true)
+                        } else {
+                            toast('An error occurred while sending your message.', false)
+                        }
+                    },
+                    error: function(data) {
+                        var data = data.responseJSON;
+                        if (data.status !== undefined && data.status === 'error' && data.errors !== undefined) {
+                            var errors = '';
+                            for (var key in data.errors) {
+                                errors += data.errors[key] + '<br>';
+                            }
+                            toast(errors, false)
+                        } else {
+                            toast('An error occurred while sending your message.', false)
+                        }
                     }
                 })
             });
+
+            function toast(message, success)
+            {
+                $('#message-toast').removeClass(success ? 'bg-danger' : 'bg-success');
+                $('#message-toast').addClass(success ? 'bg-success' : 'bg-danger');
+                $('#message-toast .toast-body').html(message);
+                $('#message-toast').toast('show');
+            }
         });
     </script>
 </body>

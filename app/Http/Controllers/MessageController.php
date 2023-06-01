@@ -38,8 +38,14 @@ class MessageController extends Controller
             ]);
 
             Messages::create($validated);
+
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Message sent successfully!',
+            ]);
         } catch (ValidationException $e) {
             return response()->json([
+                'status' => 'error',
                 'errors' => $e->errors()
             ], 422);
         }
