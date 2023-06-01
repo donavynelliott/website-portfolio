@@ -75,17 +75,21 @@
                     <form class="p-4 p-md-5 rounded-3 text-bg-gray-dark">
                         @csrf
                         <div class="mb-3">
+                            <label for="form-name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="form-name" placeholder="Your name">
+                        </div>
+                        <div class="mb-3">
                             <label for="form-email-address" class="form-label">Email address</label>
                             <input type="email" class="form-control" id="form-email-address" placeholder="name@example.com">
                         </div>
                         <div class="mb-3">
-                            <label for="form-email-message" class="form-label">Message</label>
-                            <textarea class="form-control" placeholder="Leave a comment here" id="form-email-message" style="height: 100px"></textarea>
+                            <label for="form-message" class="form-label">Message</label>
+                            <textarea class="form-control" placeholder="Leave a message here" id="form-message" style="height: 100px"></textarea>
 
                         </div>
-                        <button class="w-100 btn btn-lg btn-primary" type="submit">Send Message</button>
+                        <button id="message-submit" class="w-100 btn btn-lg btn-primary" type="button">Send Message</button>
                         <hr class="my-4">
-                        <small>When submitting this form, your email address will be sent to the server and stored in the database. This is for the purpose of contacting you back and will not be used for any other purpose.</small>
+                        <small>When submitting this form, your email address will be sent to the server and stored in the database for the purpose of contacting you back.</small>
                     </form>
                 </div>
             </div>
@@ -103,6 +107,22 @@
                         $('#email-button').remove();
                     }
                 });
+            });
+
+            $('#message-submit').click(function() {
+                $.ajax({
+                    url: "{{ route('messages.store') }}",
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        name: $('#form-name').val(),
+                        email: $('#form-email-address').val(),
+                        message: $('#form-message').val(),
+                    },
+                    type: 'POST',
+                    success: function(data) {
+                        alert('Message sent successfully!');
+                    }
+                })
             });
         });
     </script>

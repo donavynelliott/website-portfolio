@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,6 @@ Route::get('/', function () {
 Route::get('/projects', function () {
     return view('projects');
 })->name('projects');
+
+Route::post('/messages', [MessageController::class, 'store'])
+    ->name('messages.store');
