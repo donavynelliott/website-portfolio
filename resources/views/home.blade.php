@@ -65,14 +65,17 @@
                         If you would like to get in touch me with, please fill out the form or send me an email at the address below. I look forward to hearing from you!
                     </p>
                     <p class="col-lg-10" id="email-address">
-                        Email Address:
+                        Email:
                         <button class="btn btn-primary btn-outline" type="button" id="email-button">
                             Click To Reveal
                         </button>
                     </p>
                 </div>
                 <div class="col-md-10 mx-auto col-lg-5">
-                    <form class="p-4 p-md-5 rounded-3 text-bg-gray-dark">
+                    <form class="p-4 rounded-3 text-bg-gray-dark">
+                        <div class="mb-3">
+                            <h3 class="fw-light fs-1">Send Me a Message</h3>
+                        </div>
                         @csrf
                         <div class="mb-3">
                             <label for="form-name" class="form-label">Name</label>
@@ -112,7 +115,9 @@
                     url: '/api/contact-email/',
                     type: 'GET',
                     success: function(data) {
-                        $('#email-address').html('Email Address: ' + data.email);
+                        var mailTo = '<a href="mailto:' + data.email + '" class="text-white">' + data.email + '</a>';
+                        var gmailLink = '<a target="_blank" href="https://mail.google.com/mail/u/0?fs=1&tf=cm&su=Website%20Contact%20Form&to=' + data.email + '" class="text-white">Gmail</a>';
+                        $('#email-address').html('Email: ' + mailTo + ' | ' + gmailLink);
                         $('#email-button').remove();
                     }
                 });
@@ -150,8 +155,7 @@
                 })
             });
 
-            function toast(message, success)
-            {
+            function toast(message, success) {
                 $('#message-toast').removeClass(success ? 'bg-danger' : 'bg-success');
                 $('#message-toast').addClass(success ? 'bg-success' : 'bg-danger');
                 $('#message-toast .toast-body').html(message);
