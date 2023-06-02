@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="p-5 mb-4 bg-light text-dark rounded-3 text-center">
+<div class="p-5 my-4 bg-light text-dark rounded-3 text-center">
     <div class="container-fluid py-5">
         <div class="row">
             <h1 class="display-5 fw-bold">Profit Buddy</h1>
