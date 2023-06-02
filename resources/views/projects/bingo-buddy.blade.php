@@ -49,4 +49,22 @@
     </div>
 </div>
 
+<!-- Project Built with The Following -->
+<div class="p-5 mb-4 bg-light text-dark rounded-3 text-center">
+    <div class="container-fluid py-5">
+        <div class="row">
+            <h1 class="display-5 fw-bold">Built With</h1>
+            <p class="fs-4">
+                The project is built with the following technologies:
+            </p>
+            <ul class="list-unstyled fs-5">
+                <li>Laravel</li>
+                <li>TailwindCSS</li>
+                <li>MySQL</li>
+                <li>jQuery</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 @endsection
