@@ -15,7 +15,7 @@
     @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>
 
-<body class="text-center text-white bg-dark">
+<body class="text-center text-white bg-dark mb-5">
     @include('layouts.navbar')
 
     <main class="py-3">

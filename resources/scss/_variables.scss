@@ -3,6 +3,7 @@
 
 $gray: #6c757d;
 $gray-dark: #343a40;
+$footer-dark: #1a1d20;
 
 $theme-colors: (
     "primary": $primary,
@@ -15,9 +16,11 @@ $theme-colors: (
     "dark": $dark,
     "gray": $gray,
     "gray-dark": $gray-dark,
+    "footer-dark": $footer-dark,
 );
 
 $bg-colors: (
     'gray': $gray,
     'gray-dark': $gray-dark,
+    'footer-dark': $footer-dark,
 )
